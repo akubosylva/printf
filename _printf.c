@@ -15,7 +15,7 @@ int _printf(const char *format, ...)
 		return (-1);
 	i = 0;
 	length = 0;
-	while (format && format[i] && length <= 1020)
+	while (format && format[i] && length < 1024)
 	{
 		if (format[i] == '%')
 		{
