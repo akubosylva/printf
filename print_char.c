@@ -11,8 +11,7 @@ int print_char(va_list list, int length)
 {
 	char c = va_arg(list, int);
 
-	_putchar(c);
-	length++;
+	length += _putchar(c);
 	return (length);
 }
 
@@ -25,12 +24,12 @@ int print_char(va_list list, int length)
 
 int print_str(va_list list, int length)
 {
-	int i;
 	const char *str = va_arg(list, const char *);
 
 	if (str == NULL)
 		str = "(null)";
-	for (i = 0; str[i] != '\0'; i++, length++)
-		_putchar(str[i]);
-	return (length);
+	while (*str)
+		length += _putchar(*str++);
+
+		return (length);
 }
