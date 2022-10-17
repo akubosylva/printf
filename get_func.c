@@ -20,6 +20,7 @@ int (*get_func(char c))(va_list, int)
 		{'R', print_rot13},
 		{'b', print_b},
 		{'S', print_Str},
+		{'r', print_rev},
 		{'\0', NULL}
 	};
 

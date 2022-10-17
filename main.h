@@ -27,6 +27,8 @@ int print_char(va_list, int);
 
 int print_str(va_list, int);
 
+int print_rev(va_list, int);
+
 int print_int(va_list, int);
 
 int _putchar_int(int, int);
