@@ -21,6 +21,7 @@ int (*get_func(char c))(va_list, int)
 		{'b', print_b},
 		{'S', print_Str},
 		{'r', print_rev},
+		{'p', print_ptr},
 		{'\0', NULL}
 	};
 
