@@ -10,7 +10,7 @@
 int print_ptr(va_list list, int length)
 {
 	int i;
-	char *str = "(null)";
+	char *str = "(nil)";
 	unsigned long address;
 	void *ptr = va_arg(list, void *);
 
