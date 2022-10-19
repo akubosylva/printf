@@ -15,11 +15,11 @@ int print_ptr(va_list list, int length)
 
 	if (ptr == NULL)
 	{
-		length += _putchar('(');
-		length += _putchar('n');
-		length += _putchar('i');
-		length += _putchar('l');
-		length += _putchar(')');
+		_putchar('(');
+		_putchar('n');
+		_putchar('i');
+		_putchar('l');
+		_putchar(')');
 		return (length);
 	}
 
