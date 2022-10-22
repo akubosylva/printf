@@ -23,7 +23,7 @@ int print_ptr(va_list list, int length)
 
 	length += _putchar('0');
 	length += _putchar('x');
-	length += print_numbers(address, 16, "0123456789abcdef");
+	length += print_numbers(ptr, 16, "0123456789abcdef");
 
 	return (length);
 }
