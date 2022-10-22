@@ -7,25 +7,23 @@
  * Return: length
  */
 
-int print_ptr(va_list list, int length __attribute__((unused)))
+int print_ptr(va_list list, int length)
 {
 	int i = 0;
 	char *str = "(nil)";
-	unsigned long address;
-	void *ptr = va_arg(list, void *);
+	unsigned long ptr = va_arg(list, unsigned long);
 
-	if (ptr == NULL)
+	if (!ptr)
 	{
-		for (i = 0; str[i]; i++)
+		for (i = 0; str[i]; i++, length++)
 			_putchar(str[i]);
 
-		return (i);
+		return (length);
 	}
 
-	address = (unsigned long)ptr;
-	i += _putchar('0');
-	i += _putchar('x');
-	i += print_numbers(address, 16, "0123456789abcdef");
+	length += _putchar('0');
+	length += _putchar('x');
+	length += print_numbers(address, 16, "0123456789abcdef");
 
-	return (i);
+	return (length);
 }
