@@ -9,9 +9,9 @@
 
 int printf_hex_aux(unsigned long int num)
 {
-	int i;
-	int *array;
-	int counter = 0;
+	long int i;
+	long int *array;
+	long int counter = 0;
 	unsigned long int temp = num;
 
 	while (num / 16 != 0)
@@ -51,7 +51,7 @@ int print_ptr(va_list list, int length)
 {
 	char *str = "(nil)";
 	int i;
-	unsigned long int address;
+	long int address;
 	void *ptr = va_arg(list, void *);
 
 	if (ptr == NULL)
