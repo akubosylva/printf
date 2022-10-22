@@ -63,6 +63,13 @@ int print_ptr(va_list list, int length)
 	address = (unsigned long int)ptr;
 	_putchar('0');
 	_putchar('x');
-	length = printf_hex_aux(address);
-	return (length + 2);
+	if (printf_hex_aux(address) != NULL)
+	{
+		_putchar('0');
+		_putchar('x');
+		length = printf_hex_aux(address);
+		return (length + 2);
+	}
+	else
+		return (length);
 }
