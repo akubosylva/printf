@@ -10,7 +10,7 @@
 int print_ptr(va_list list, int length)
 {
 	int i;
-	unsigned long address;
+	unsigned long int address;
 	char *str = "(nil)";
 	void *ptr = va_arg(list, void *);
 
@@ -22,7 +22,7 @@ int print_ptr(va_list list, int length)
 		return (length);
 	}
 
-	address = (unsigned long)ptr;
+	address = (unsigned long int)ptr;
 	length += _putchar('0');
 	length += _putchar('x');
 	length += print_numbers(address, 16, "0123456789abcdef");
