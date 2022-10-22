@@ -21,6 +21,8 @@ int printf_hex_aux(unsigned long int num)
 	}
 	counter++;
 	array = malloc(counter * sizeof(long int));
+	if (array == NULL)
+		return (NULL);
 
 	for (i = 0; i < counter; i++)
 	{
