@@ -21,19 +21,20 @@ int printf_hex_aux(unsigned long int num)
 	}
 	counter++;
 	array = malloc(counter * sizeof(long int));
-	if (array == NULL)
-		return (NULL);
 
-	for (i = 0; i < counter; i++)
+	if (array != NULL)
 	{
-		array[i] = temp % 16;
-		temp /= 16;
-	}
-	for (i = counter - 1; i >= 0; i--)
-	{
-		if (array[i] > 9)
-			array[i] = array[i] + 39;
-		_putchar(array[i] + '0');
+		for (i = 0; i < counter; i++)
+		{
+			array[i] = temp % 16;
+			temp /= 16;
+		}
+		for (i = counter - 1; i >= 0; i--)
+		{
+			if (array[i] > 9)
+				array[i] = array[i] + 39;
+			_putchar(array[i] + '0');
+		}
 	}
 	free(array);
 	return (counter);
@@ -63,13 +64,6 @@ int print_ptr(va_list list, int length)
 	address = (unsigned long int)ptr;
 	_putchar('0');
 	_putchar('x');
-	if (printf_hex_aux(address) != NULL)
-	{
-		_putchar('0');
-		_putchar('x');
-		length = printf_hex_aux(address);
-		return (length + 2);
-	}
-	else
-		return (length);
+	length = printf_hex_aux(address);
+	return (length + 2);
 }
